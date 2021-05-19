@@ -25,6 +25,20 @@ User.init(
             validate: {
                 len: [5, 25]
             } 
+        },
+        bio: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [1, 30]
+            } 
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [1, 20]
+            } 
         }
     },
     {
