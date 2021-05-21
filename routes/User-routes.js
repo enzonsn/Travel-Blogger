@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { json } = require('sequelize/types');
+// const { json } = require('sequelize/types');
 const { User } = require('../models');
 
 router.get('/', (req, res) => {
