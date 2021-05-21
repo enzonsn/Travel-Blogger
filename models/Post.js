@@ -12,9 +12,12 @@ class Post extends Model {}
         primaryKey: true,
         autoIncrement: true
       },
-      title: {
+      post_content: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          len: [1, 250]
+      } 
       },
       post_url: {
         type: DataTypes.STRING,
@@ -23,13 +26,13 @@ class Post extends Model {}
           isURL: true
         }
       },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id'
-        }
-      }
+      // user_id: {
+      //   type: DataTypes.INTEGER,
+      //   references: {
+      //     model: 'user',
+      //     key: 'id'
+      //   }
+      // }
     },
     {
       sequelize,
