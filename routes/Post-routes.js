@@ -4,6 +4,8 @@ const { User, Post } = require("../models");
 const sequelize = require("../config/connection");
 // const withAuth = require('');
 
+// !!!!!!!!!!!!! WE NEED TO ADD USER-AUTH IN THESE ROUTES !!!!!!!!!!!!!
+
 // get all posts
 router.get("/", (req, res) => {
   console.log("======================");
@@ -24,6 +26,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// get post by id
 router.get("/:id", (req, res) => {
   Post.findOne({
     where: {
@@ -49,5 +52,58 @@ router.get("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// create a post
+router.post("/", (req, res) => {
+  Post.create({
+    post_content: req.body.post_content,
+    post_url: req.body.post_url,
+    // user_id: req.session.user_id,
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// update a post
+router.put("/:id", (req, res) => {
+  Post.update(
+    {
+      post_content: req.body.post_content,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// delete a post route
+router.delete("/:id", (req, res) => {
+    Post.destroy({
+        where: {
+          id: req.params.id,
+        },
+      })
+        .then((dbPostData) => {
+          if (!dbPostData) {
+            res.status(404).json({ message: "No post found with this id" });
+            return;
+          }
+          res.json(dbPostData);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+})
 
 module.exports = router;
