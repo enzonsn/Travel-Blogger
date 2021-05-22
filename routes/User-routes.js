@@ -1,6 +1,17 @@
 const router = require('express').Router();
 // const { json } = require('sequelize/types');
-const { User } = require('../models');
+const { User } = require('../models')
+const bcrypt = require('bcrypt')
+const passport = require('passport')
+const flash = require('express-flash')
+const session = require('express-session')
+
+const initializePassport = require('../passport-config')
+initializePassport(
+  passport,
+  username => User.findOne(user => user.username === username),
+  id => User.findOne(user => user.id === id)
+);
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -27,7 +38,7 @@ router.get('/:id', (req, res) => {
     })
 });
 
-router.post('/', (req, res) => {
+router.post('/register', (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
