@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User, Post } = require("../models");
 
 const sequelize = require("../config/connection");
+const passport = require("passport");
 // const withAuth = require('');
 
 // !!!!!!!!!!!!! WE NEED TO ADD USER-AUTH IN THESE ROUTES !!!!!!!!!!!!!
@@ -54,7 +55,8 @@ router.get("/:id", (req, res) => {
 });
 
 // create a post
-router.post("/", (req, res) => {
+router.post("/",(req, res) => {
+  console.log(req);
   Post.create({
     post_content: req.body.post_content,
     post_url: req.body.post_url,
