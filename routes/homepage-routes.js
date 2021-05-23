@@ -20,6 +20,9 @@ router.get("/", (req, res) => {
       // console.log("home-routes line 15", dbPostData);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log(posts[0]);
+      if (!posts[0]){
+        res.render("homepage");
+      }
       res.render("homepage", posts[0]);
     })
     .catch((err) => {
