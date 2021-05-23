@@ -54,7 +54,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// create a post
+// create a post!!!!!!!!!!*************
 router.post("/",(req, res) => {
   console.log(req);
   Post.create({
