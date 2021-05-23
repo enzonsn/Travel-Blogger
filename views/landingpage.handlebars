@@ -1,0 +1,48 @@
+<div class="uk-section uk-background-cover uk-flex uk-flex-column uk-flex-center@s uk-flex-middle uk-flex-wrap uk-text-center" uk-height-viewport="expand:true">
+    
+    <div class="uk-container uk-container-expand">
+        <h1 class="uk-heading-large uk-text-bolder uk-margin-auto-vertical">Travel Blogger</h1>
+        <h2 class="uk-margin-large-top">Sign In</h2>
+        <form>
+            <fieldset class="uk-fieldset">
+                <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                         <input class="uk-input uk-form-width-medium uk-margin-top" type="text" placeholder="Username">
+                        <input class="uk-input uk-form-width-medium uk-margin" type="text" placeholder="Password">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="uk-flex uk-flex-center uk-margin">
+            <button class="uk-button uk-button-default" uk-toggle="target: #register-modal" type="button"><a href="#" style="color:black;">Register</a></button>
+            <button class="uk-button uk-button-default uk-margin-large-left" type="submit"><a href="#" style="color:black;">Login</a></button>
+        </div>
+    </div>
+
+    <div id="register-modal" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title uk-text-center">REGISTER</h2>
+            </div>
+            <div class="uk-modal-body uk-overflow-auto">
+                <form>
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-grid-column" uk-grid >
+                          <div class="uk-width-1-2@s uk-height-small uk-text-center uk-margin">
+                            <input class="uk-input uk-form-width-medium uk-margin-top" type="text" placeholder="Username">
+                            <input class="uk-input uk-form-width-medium uk-margin" type="text" placeholder="Password">
+                            <input class="uk-input uk-form-width-medium uk-margin-auto" type="text" placeholder="Location">
+                          </div>
+                          <div class="uk-width-1-2@s uk-margin-top uk-text-center">
+                            <textarea class="uk-textarea uk-height-small" style="resize: none;" cols="25" placeholder="Bio"></textarea>
+                          </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="uk-modal-footer uk-text-center">
+                <button class="uk-button uk-button-default uk-modal-close" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
