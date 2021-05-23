@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
+}
+
+html {
+    background: url("../RiverBackground.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  background-image: linear-gradient(to right, rgb(33 30 29), rgb(107 72 59));
+  text-align: center;
+}
+
+h1 {
+  padding-bottom: 2%;
+  color: cornsilk;
+  margin: 2%;
+  margin-top: 0%;
+}
+
+a {
+  text-decoration: none;
+  color: #5f952dbc;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+a:hover {
+  color: #89ff1bd8;
+}
+
+li {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-list {
+    margin-right: auto;
+    margin-left: auto;
+}
+ol{
+    padding: 0%
+}
+
+.uk-width-2-3 {
+    width: calc(100% * 2 / 3.001);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+#post-div {
+    background-color: rgb(90 216 228 / 87%);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 61%);
+}

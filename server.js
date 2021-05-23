@@ -13,7 +13,7 @@ const passport = require('passport');
 const app = express();
 const PORT = process.env.PORT || 3003;
 const exphbs = require('express-handlebars');
-const helpers = require('./');
+const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 
 
