@@ -19,10 +19,10 @@ router.get("/", (req, res) => {
       // pass a single post object into the homepage template
       // console.log("home-routes line 15", dbPostData);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      console.log(posts[0]);
-      if (!posts[0]){
-        res.render("homepage");
-      }
+      console.log(posts[0].id);
+        if (!posts[0].id){
+          res.render("homepage");
+        }
       res.render("homepage", posts[0]);
     })
     .catch((err) => {
