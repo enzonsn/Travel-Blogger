@@ -26,13 +26,13 @@ class Post extends Model {}
           isURL: true
         }
       },
-      // user_id: {
-      //   type: DataTypes.INTEGER,
-      //   references: {
-      //     model: 'user',
-      //     key: 'id'
-      //   }
-      // }
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'user',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
