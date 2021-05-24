@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
       if (!posts[0]){
         res.render("homepage");
       }
-      res.render("homepage", posts[0]);
+      res.render("homepage");
     })
     .catch((err) => {
       console.log(err);
