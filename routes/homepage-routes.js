@@ -8,7 +8,7 @@ const { post } = require("./profile-page-routes");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "post_content", "post_url", "created_at"],
+    attributes: ["id", "post_destination", "post_content", "post_url", "created_at"],
     include: [
       {
         model: User,
