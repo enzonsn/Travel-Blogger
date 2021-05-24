@@ -15,31 +15,31 @@ initializePassport(
 );
 
 router.get('/', checkAuthenticated, (req, res) => {
-    User.findAll({
-        attributes: { exclude: ['password'] }
-    })
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
 })
 
 router.get('/:id', (req, res) => {
-    User.findOne({
-        attributes: { exclude: ['password'] },
-        where: {
-            id: req.params.id
-        }
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.params.id
+    }
 
-    }).then(dbUser => {
-        if (!dbUser) {
-            res.status(404).json({ message: 'No user found with this id' });
-            return;
-        }
-        res.json(dbUser)
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+  }).then(dbUser => {
+    if (!dbUser) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUser)
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
-router.get('/login', (req, res)=>{
+router.get('/login', (req, res) => {
 
 });
 
@@ -48,74 +48,77 @@ router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: true
 }));
-router.delete('/logout', (req, res)=>{
+router.delete('/logout', (req, res) => {
   req.logOut()
   res.redirect('/login')
 })
-router.post('/register', checkNotAuthenticated, (req, res) => {
-    User.create({
-        username: req.body.username,
-        password: req.body.password
-    }).then(dbUser => {
-        res.json(dbUser)
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+router.post('/register', checkNotAuthenticated, async (req, res) => {
+  User.create({
+    id: req.body.id,
+    username: req.body.username,
+    password: req.body.password,
+    location: req.body.location,
+    bio: req.body.bio
+  }).then(dbUser => {
+    res.json(dbUser)
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 
 router.put('/:id', (req, res) => {
 
-    User.update(req.body, {
-      individualHooks: true,
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dbUser => {
-        if (!dbUser[0]) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        res.json(dbUser);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-  
-  
-  router.delete('/:id', (req, res) => {
-    User.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dbUser => {
-        if (!dbUser) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        res.json(dbUser);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-  function checkAuthenticated(){
-    if (req.isAuthenticated()) {
-      return next();
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id
     }
-    res.redirect('/login');
-  }
- function checkNotAuthenticated(){
+  })
+    .then(dbUser => {
+      if (!dbUser[0]) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUser);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+router.delete('/:id', (req, res) => {
+  User.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbUser => {
+      if (!dbUser) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUser);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-   return res.redirect('/');
+    return next();
+  }
+  res.redirect('/login');
+}
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect('/');
   }
   next();
- }
+}
 module.exports = router

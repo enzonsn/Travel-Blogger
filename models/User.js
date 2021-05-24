@@ -31,7 +31,11 @@ User.init(
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
+<<<<<<< HEAD
                 len: [1, 100]
+=======
+                len: [1, 90]
+>>>>>>> 744a6f4571abfc9e7d401225495250e6124159fe
             } 
         },
         location: {
