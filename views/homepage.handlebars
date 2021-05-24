@@ -26,13 +26,13 @@
         <div>
           <div class="uk-card uk-card-default" id="post-div">
             <div class="uk-card-media-top poat-image">
-              <img src="{{format_url post_url}}" alt="post image" />
+              <img src="{{post_url}}" alt="post image" />
             </div>
             <div class="uk-card-body">
               <h3 class="uk-card-title">by
                 {{user.username}}
                 on
-                {{format_date created_at}}</h3>
+                {{created_at}}</h3>
               <p>{{post_content}}</p>
             </div>
           </div>
