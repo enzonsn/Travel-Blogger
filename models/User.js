@@ -17,7 +17,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 10]
+                len: [1, 20]
             } 
         },
         password: {
@@ -31,11 +31,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-<<<<<<< HEAD
                 len: [1, 100]
-=======
-                len: [1, 90]
->>>>>>> 744a6f4571abfc9e7d401225495250e6124159fe
             } 
         },
         location: {
