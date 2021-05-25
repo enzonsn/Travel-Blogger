@@ -80,3 +80,17 @@ ol{
 img {
   width: 100%;
 }
+
+.profile-head {
+  display: grid;
+  justify-content: center;
+}
+
+#create-post {
+  margin: 20%;
+  width: max-content;
+}
+
+.title {
+  width: max-content;
+}

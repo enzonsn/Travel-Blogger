@@ -9,13 +9,16 @@ const passport = require("passport");
 router.get('/', (req, res) => {
     Post.findAll({
       where: {
-        user_id: req.session.user_id
+        user_id: 1
+        // user_id: req.session.user_id
       },
       attributes: [
         'id',
+        'post_destination',
         'post_content',
         'post_url',
-        'user_id'
+        'user_id',
+        'created_at',
       ],
       include: [
         {
@@ -28,7 +31,7 @@ router.get('/', (req, res) => {
         console.log("this is the dbPostdData:", dbPostData);
         const posts = dbPostData.map(post => post.get({ plain: true }));
         console.log("this is the post data:", posts);
-        res.render('profile', { posts, loggedIn: true });
+        res.render('profile-page', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
