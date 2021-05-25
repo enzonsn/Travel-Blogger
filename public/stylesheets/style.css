@@ -76,3 +76,20 @@ ol{
 .post-creator {
   margin:auto;
 }
+
+#create-post {
+  background-color: #7acc7abf;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.profile-head {
+  display: inline;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+
