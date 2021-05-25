@@ -1,4 +1,4 @@
-    <div class="mb-5 pt-3">
+    <div class="uk-container uk-container-expand">
         <a href="/profile-page/create/"><button id="create-post" class="button is-primary is-pulled-right">New Post</button></a>
         
         <h2 class="title pb-4">My Posts</h2><hr>
@@ -8,7 +8,7 @@
     {{#each posts as |post|}}
         {{> post-info post}}
         
-            <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">Edit Post</button></a>
+            {{!-- <a href="/profile-page/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">Edit Post</button></a> --}}
         </div>
     {{/each}}
 
