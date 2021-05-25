@@ -22,6 +22,7 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbPostData => {
+        console.log("this is the dbPostdData:", dbPostData);
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('profile-page', { posts, loggedIn: true });
       })
