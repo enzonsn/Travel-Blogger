@@ -34,13 +34,15 @@ h1 {
 
 a {
   text-decoration: none;
-  color: #5f952dbc;
+  color: #1642e3a7;
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #89ff1bd8;
+  color: #1642e3e8;
+  text-decoration: none;
+
 }
 
 li {
@@ -69,4 +71,8 @@ ol{
     background-color: rgb(90 216 228 / 87%);
     box-shadow: 0 5px 15px rgb(0 0 0 / 61%);
     /* max-width: ; */
+}
+
+.post-creator {
+  margin:auto;
 }
