@@ -78,9 +78,11 @@ ol{
 }
 
 #create-post {
-  background-color: #7acc7abf;
-  margin-top: 2%;
-  margin-left: 2%;
+  color: #59de59bf;
+}
+
+#create-post:hover {
+  color: #01c101;
 }
 
 .profile-head {
@@ -90,6 +92,8 @@ ol{
 .title {
   display: flex;
   justify-content: center;
+  margin-top: 5%;
+  border-bottom: 2px solid;
 }
 
 

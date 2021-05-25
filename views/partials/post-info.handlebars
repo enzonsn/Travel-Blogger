@@ -8,11 +8,13 @@
         <h2 class="post-destination">{{post_destination}}</h2>
         <p class="post-creator">by {{user.username}}
           on{{format_date created_at}}</p>
+          {{#if user.bio}}
             <div class="uk-visible-toggle" tabindex="0">
               <a>User Bio</a>
             <div class="uk-hidden-hover">{{user.bio}}</div>
             </div>
-        <p>{{post_content}}</p>
+          {{/if}}
+        <p class="blog-text">{{post_content}}</p>
       </div>
     </div>
   </div>
