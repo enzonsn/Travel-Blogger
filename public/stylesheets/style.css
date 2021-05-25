@@ -12,7 +12,7 @@ html {
 }
 
 html {
-    background: url("../RiverBackground.png") no-repeat center center fixed; 
+    background: url("../traveler.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -22,8 +22,6 @@ html {
 header {
   width: 100%;
   height: auto;
-  padding: 2%;
-  background-image: linear-gradient(to right, rgb(33 30 29), rgb(107 72 59));
   text-align: center;
 }
 

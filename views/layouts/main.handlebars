@@ -11,27 +11,38 @@
 
 <div class="wrapper">
     <header>
-      <nav class="uk-navbar-container uk-navbar-transparent" style="z-index: 980"; uk-sticky="top: 200; bottom: #animation" uk-navbar>
-    <div class="uk-navbar-left">
-      <a class="uk-navbar-item uk-logo" href="#">Travel Blogger</a>
-    </div>
-    <div class="uk-navbar-right">
-      <ul class="uk-navbar-nav">
-        <li class="uk-active"><a href="#">Home</a></li>
-        {{#if loggedIn}}
-          <li class=""><a href="#">Logout</a></li>
-        {{else}}
-          <li class=""><a href="#">Account</a></li>
-        {{/if}}
-      </ul>
+      <nav class="uk-navbar-container" style="z-index: 980; background-color: #f1f2f1; color: black;" uk-sticky="top: 200;" uk-navbar>
+    <div class="uk-navbar-center">
+
+      <div class="uk-navbar-center-left">
+        <div>
+          <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <a class="uk-text-bolder uk-navbar-item uk-logo" style="color:black;" href="#">Travel Blogger</a>
+
+      <div class="uk-navbar-center-right">
+        <div>
+          <ul class="uk-navbar-nav">
+            {{#if loggedIn}}
+              <li class=""><a href="#">Logout</a></li>
+            {{else}}
+              <li class=""><a href="#">Account</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      <p>Travel Blogger© All Right Reserved</p>
+    <footer class="uk-text-center" style="background-color: #f1f2f1; min-height: 80px;">
+      <p class="uk-flex-middle">Travel Blogger© All Right Reserved</p>
     </footer>
   </div>
 </body>
