@@ -8,6 +8,7 @@ const profileRoutes = require('./profile-page-routes');
 // const commentRoutes = require('./comment-routes');
 
 // router.use('/comments', commentRoutes);
+router.use('/', landingRoutes);
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/home', homeRoutes);
