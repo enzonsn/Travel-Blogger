@@ -8,7 +8,7 @@ const passport = require("passport");
 // !!!!!!!!!!!!! WE NEED TO ADD USER-AUTH IN THESE ROUTES !!!!!!!!!!!!!
 
 // get all posts
-router.get("/", (req, res) => {
+router.get("/",  (req, res) => {
   console.log("======================");
   Post.findAll({
     // order: [["created_at", "DESC"]],
@@ -20,7 +20,10 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbPostData) => {
+    console.log("post data ---------", dbPostData);
+    res.json(dbPostData);
+  })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

@@ -30,7 +30,7 @@
             {{#if loggedIn}}
               <li class=""><a href="#">Logout</a></li>
               <li>
-                  <a href="/profile-page/create/" id="create-post">New Post</a>
+                  <a href="/profile-page/create/" uk-toggle="target: #post-modal" id="create-post">New Post</a>
               </li>
             {{else}}
               <li class=""><a href="../profile">Account</a></li>
@@ -43,6 +43,36 @@
     </header>
     <main>
       {{{ body }}}
+      <div id="post-modal" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title uk-text-center">NEW POST</h2>
+        </div>
+        <div class="uk-modal-body uk-overflow-auto">
+            <form>
+                <fieldset class="uk-fieldset">
+                        <div class="uk-grid-column" uk-grid >
+                            <div class="uk-width-1-2@s uk-height-small uk-text-center uk-margin">
+                                <input class="uk-input uk-form-width-medium uk-margin-top" type="text" placeholder="Title">
+                                <div class="uk-margin" uk-form-custom="target: true">
+            			            <input type="file">
+            			            <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+        		                </div>
+                            </div>
+                            <div class="uk-width-1-2@s uk-margin-top uk-text-center">
+                                <textarea class="uk-textarea uk-height-small" style="resize: none;" cols="25" placeholder="Description..."></textarea>
+                            </div>
+                        </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="uk-modal-footer uk-text-center">
+            <button class="uk-button uk-button-default uk-modal-close" type="submit">POST</button>
+        </div>
+    </div>
+</div>
+      <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
     </main>
     <footer class="uk-text-center" style="background-color: #f1f2f1; min-height: 80px;">
       <p class="uk-flex-middle">Travel Blogger© All Right Reserved</p>

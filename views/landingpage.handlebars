@@ -8,19 +8,23 @@
 
     <div class="uk-container" style="z-index: 980; background-color: #f1f2f1; color: black; max-width: none; min-height: calc(25vh);">
         <h2 class="uk-margin-medium-top uk-margin-remove-bottom">Sign In</h2>
-        <form>
             <fieldset class="uk-fieldset">
                 <div class="uk-margin uk-margin-remove-top uk-flex uk-flex-column uk-flex-middle">
-                        <input class="uk-input uk-form-width-medium uk-margin-top uk-text-center" type="text" placeholder="Username">
-                        <input class="uk-input uk-form-width-medium uk-margin uk-text-center" type="password" placeholder="Password">
+                    <form action="/users/login" method="POST">
+                        <input class="uk-input uk-form-width-medium uk-margin-top uk-text-center" type="text" placeholder="Username" name="username" required> 
+                        <input class="uk-input uk-form-width-medium uk-margin uk-text-center" type="password" placeholder="Password" name="password" required>
+                        <input type="submit" value="login">
+                    </form>
                     </div>
                 </div>
             </fieldset>
-        </form>
+            
+        
         <div class="" style="background-color: #f1f2f1; min-height: 80px;">
             <button class="uk-button uk-button-default" uk-toggle="target: #register-modal" type="button"><a href="#" style="color: #999">Register</a></button>
-            <button class="uk-button uk-button-default uk-margin-large-left" type="submit"><a href="#" style="color: #999">Login</a></button>
+            {{!-- <button class="uk-button uk-button-default uk-margin-large-left" type="submit"><a href="#" style="color: #999">Login</a></button> --}}
         </div>
+        
     </div>
 
     <div id="register-modal" uk-modal>
@@ -30,25 +34,28 @@
                 <h2 class="uk-modal-title uk-text-center">REGISTER</h2>
             </div>
             <div class="uk-modal-body uk-overflow-auto uk-height-medium">
-                <form>
+                <form action="/users/register" method="POST">
                     <fieldset class="uk-fieldset">
                         <div class="uk-grid-column" uk-grid >
                           <div class="uk-width-1-2@s uk-height-small uk-text-center uk-margin">
-                            <input class="uk-input uk-form-width-medium uk-margin-top" type="text" placeholder="Username">
-                            <input class="uk-input uk-form-width-medium uk-margin" type="password" placeholder="Password">
-                            <input class="uk-input uk-form-width-medium uk-margin-bottom" type="password" placeholder="Confirm Password">
-                            <input class="uk-input uk-form-width-medium uk-margin-auto" type="text" placeholder="Location">
+                            <input class="uk-input uk-form-width-medium uk-margin-top" type="text" placeholder="Username" name="username" required>
+                            <input class="uk-input uk-form-width-medium uk-margin" type="password" placeholder="Password" name="password" required>
+                            {{!-- <input class="uk-input uk-form-width-medium uk-margin-bottom" type="password" placeholder="Confirm Password"> --}}
+                            <input class="uk-input uk-form-width-medium uk-margin-auto" type="text" placeholder="Location" name="location" required>
+                            <div class="uk-width-1-2@s uk-margin-top uk-text-center uk-height-medium">
+                            <textarea class="uk-textarea uk-height-1-1" style="resize: none;" cols="25" placeholder="Bio" name="bio" required></textarea>
                           </div>
-                          <div class="uk-width-1-2@s uk-margin-top uk-text-center uk-height-medium">
-                            <textarea class="uk-textarea uk-height-1-1" style="resize: none;" cols="25" placeholder="Bio"></textarea>
+                          <div class="uk-modal-footer uk-text-center">
+                              <input type="submit">
+                {{!-- <button class="uk-button uk-button-default uk-modal-close" type="submit">Submit</button> --}}
+            </div>
+                          
                           </div>
                         </div>
                     </fieldset>
                 </form>
             </div>
-            <div class="uk-modal-footer uk-text-center">
-                <button class="uk-button uk-button-default uk-modal-close" type="submit">Submit</button>
-            </div>
+            
         </div>
     </div>
 </div>
