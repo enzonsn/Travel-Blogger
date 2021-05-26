@@ -9,13 +9,16 @@ const passport = require("passport");
 router.get('/', (req, res) => {
     Post.findAll({
       where: {
-        user_id: req.session.user_id
+        user_id: 1
+        // user_id: req.session.user_id
       },
       attributes: [
         'id',
+        'post_destination',
         'post_content',
         'post_url',
-        'user_id'
+        'user_id',
+        'created_at',
       ],
       include: [
         {
@@ -28,7 +31,7 @@ router.get('/', (req, res) => {
         console.log("this is the dbPostdData:", dbPostData);
         const posts = dbPostData.map(post => post.get({ plain: true }));
         console.log("this is the post data:", posts);
-        res.render('profile', { posts, loggedIn: true });
+        res.render('profile-page', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -36,11 +39,8 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.get('/edit/:id', (req, res) => {
+  /* router.get('/edit/:id', (req, res) => {
     Post.findOne({
-      where: {
-        id: req.params.id
-      },
       attributes: [
         'id',
         'post_content',
@@ -61,9 +61,9 @@ router.get('/', (req, res) => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this id' });
           return;
-        }
+        } */
   
-        const post = dbPostData.get({ plain: true });
+       /*  const post = dbPostData.get({ plain: true }); */
 
         /* res.render('edit-post', {
             post,
@@ -74,14 +74,10 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       }); */
-});
+
 
 router.get('/create/', (req, res) => {
     Post.findAll({
-      where: {
-        // use the ID from the session
-        user_id: req.session.user_id
-      },
       attributes: [
         'id',
         'post_content',
@@ -107,6 +103,6 @@ router.get('/create/', (req, res) => {
         res.status(500).json(err);
       });
   });
-  });
+  
 
 module.exports = router;

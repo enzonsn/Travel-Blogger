@@ -17,21 +17,23 @@
       <div class="uk-navbar-center-left">
         <div>
           <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="#">Home</a></li>
+            <li class="uk-active"><a href="../home">Home</a></li>
           </ul>
         </div>
       </div>
 
-      <a class="uk-text-bolder uk-navbar-item uk-logo" style="color:black;" href="#">Travel Blogger</a>
+      <a class="uk-text-bolder uk-navbar-item uk-logo" style="color:black;" href="../home">Travel Blogger</a>
 
       <div class="uk-navbar-center-right">
         <div>
           <ul class="uk-navbar-nav">
             {{#if loggedIn}}
               <li class=""><a href="#">Logout</a></li>
-              <li class=""><a href="#" uk-toggle="target: #post-modal">Post</a></li>
+              <li>
+                  <a href="/profile-page/create/" uk-toggle="target: #post-modal" id="create-post">New Post</a>
+              </li>
             {{else}}
-              <li class=""><a href="#">Account</a></li>
+              <li class=""><a href="../profile">Account</a></li>
             {{/if}}
           </ul>
         </div>
@@ -76,6 +78,7 @@
       <p class="uk-flex-middle">Travel Blogger© All Right Reserved</p>
     </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
 </body>
 
 </html>
