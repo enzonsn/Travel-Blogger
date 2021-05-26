@@ -89,7 +89,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// delete a post route
+// delete a post
 router.delete("/:id", (req, res) => {
     Post.destroy({
         where: {
