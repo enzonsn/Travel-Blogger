@@ -1,42 +1,21 @@
-<<<<<<< HEAD
-<ol class="post-list">
-  <li>
-    <article class="post">
-      <div class="uk-width-2-3">
-        <div>
-          <div class="uk-card uk-card-default" id="post-div">
-            <div class="uk-card-media-top poat-image">
-              <img src="{{post_url}}" alt="post image" />
-            </div>
-            <div class="uk-card-body">
-              <h3 class="uk-card-title">by
-                {{user.username}}
-                on
-                {{created_at}}</h3>
-              <p>{{post_content}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </li>
-</ol>
-=======
 <article class="post">
-  <div class="uk-width-2-3">
+  <div class="uk-width-1-2">
     <div class="uk-card uk-card-default" id="post-div">
       <div class="uk-card-media-top post-image">
         <img src="{{post_url}}" alt="post image" />
       </div>
       <div class="uk-card-body">
         <h2 class="post-destination">{{post_destination}}</h2>
-        <h3 class="uk-card-title">by
-          {{user.username}}
-          on
-          {{format_date created_at}}</h3>
-        <p>{{post_content}}</p>
+        <p class="post-creator">by {{user.username}}
+          on{{format_date created_at}}</p>
+          {{#if user.bio}}
+            <div class="uk-visible-toggle" tabindex="0">
+              <a>User Bio</a>
+            <div class="uk-hidden-hover">{{user.bio}}</div>
+            </div>
+          {{/if}}
+        <p class="blog-text">{{post_content}}</p>
       </div>
     </div>
   </div>
 </article>
->>>>>>> 23ec8a4e50afeac2003f74bcbc0e5816bb8514c3
