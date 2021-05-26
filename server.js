@@ -7,7 +7,7 @@ const sequelize = require('./config/connection');
 const path = require('path');
 const flash = require('express-flash')
 const session = require('express-session')
-const routes = require('./routes');
+
 const passport = require('passport');
 
 const app = express();
@@ -30,6 +30,7 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+const routes = require('./routes');
 
 app.use(routes);
 
