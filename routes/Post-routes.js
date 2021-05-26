@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_content", "post_url"],
+    attributes: ["id", "post_destination", "post_content", "post_url"],
     include: [
       {
         model: User,
@@ -58,9 +58,10 @@ router.get("/:id", (req, res) => {
 router.post("/",(req, res) => {
   console.log(req);
   Post.create({
+    post_destination: req.body.post_destination,
     post_content: req.body.post_content,
     post_url: req.body.post_url,
-    // user_id: req.session.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {

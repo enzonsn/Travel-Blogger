@@ -27,7 +27,7 @@ header {
 
 h1 {
   padding-bottom: 2%;
-  color: cornsilk;
+  color: #f1f2f1;
   margin: 2%;
   margin-top: 0%;
 }
@@ -93,7 +93,6 @@ ol{
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  border-bottom: 2px solid;
 }
 
 
