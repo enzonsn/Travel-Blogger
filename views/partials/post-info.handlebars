@@ -15,8 +15,10 @@
             </div>
           {{/if}}
         <p class="blog-text">{{post_content}}</p>
-      </div>
-      <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-delete-btn">DELETE</button>
-    </div>
+         {{#if loggedIn}}
+            </div>
+              <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-delete-btn">DELETE</button>
+            </div>
+         {{/if}}
   </div>
 </article>
