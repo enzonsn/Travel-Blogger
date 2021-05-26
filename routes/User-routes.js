@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   successRedirect: '/home',
-  failureRedirect: '/login',
+  failureRedirect: '/',
   failureFlash: true
 }));
 
