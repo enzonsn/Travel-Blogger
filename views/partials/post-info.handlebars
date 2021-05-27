@@ -1,4 +1,4 @@
-<article id="post-id" name={{id}} class="post">
+<article class="post">
   <div class="uk-width-1-2">
     <div class="uk-card uk-card-default" id="post-div">
       <div class="uk-card-media-top post-image">
@@ -15,10 +15,10 @@
             </div>
           {{/if}}
         <p class="blog-text">{{post_content}}</p>
-         {{#if loggedIn}}
-            </div>
-              <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-delete-btn">DELETE</button>
-            </div>
-         {{/if}}
+      </div>
+      {{!-- add {{#if (user.id === post.user_id)}} --}}
+        <a id="single-post-link" href="./single-post" >EDIT/DELETE</a>
+        {{!-- <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-delete-btn">DELETE</button> --}}
+    </div>
   </div>
 </article>

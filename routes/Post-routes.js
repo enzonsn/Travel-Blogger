@@ -89,6 +89,11 @@ router.put("/:id", (req, res) => {
     });
 });
 
+
+
+
+
+
 // delete a post
 router.delete("/:id", (req, res) => {
     Post.destroy({
@@ -96,7 +101,7 @@ router.delete("/:id", (req, res) => {
           id: req.params.id,
         },
       })
-        .then((dbPostData) => {
+      .then((dbPostData) => {
           if (!dbPostData) {
             res.status(404).json({ message: "No post found with this id" });
             return;

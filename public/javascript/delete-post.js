@@ -1,9 +1,11 @@
+const { post } = require("../../routes/Post-routes");
+
 async function deleteFormHandler(event) {
   event.preventDefault();
 
-  const id = document.querySelector("#post-id").name;
- console.log("here is the id ------------------->>>>", id)
-  const response = await fetch(`/api/posts/${id}`, {
+  // const id = we need to get the post id here somehow
+ console.log("here is the id ------------------->>>>", id);
+  const response = await fetch(`/posts/${id}`, {
     method: "DELETE",
   });
 
@@ -16,4 +18,4 @@ async function deleteFormHandler(event) {
 
 document
   .querySelector("#post-delete-btn")
-  .addEventListener("submit", deleteFormHandler);
+  .addEventListener("click", deleteFormHandler);
