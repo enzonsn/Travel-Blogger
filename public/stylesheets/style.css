@@ -124,3 +124,7 @@ element.style {
   
   }
 
+  .uk-position-bottom {
+    position: absolute;
+    bottom: auto;
+  }
