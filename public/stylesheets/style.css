@@ -112,6 +112,36 @@ element.style {
   width: 50%;
 }
 
+
+.uk-position-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.uk-margin {
+  margin-bottom: 0px;
+}
+
+.uk-button {
+  margin: 0px 0px 0px;
+}
+
+.uk-button-default {
+  background-color: #95c78f6b;
+}
+
+element.style {
+  z-index: 980;
+  background-color: #b6c1b6c7;
+  color: black;
+  max-width: none;
+}
+
+.uk-container {
+  padding-bottom: 30px;
+}
+
 .form-submit-button {
   background: #0066A2;
   color: white;
@@ -122,6 +152,7 @@ element.style {
   font: bold 15px arial, sans-serif;
   
   }
+
 
   .uk-position-bottom {
     position: absolute;
