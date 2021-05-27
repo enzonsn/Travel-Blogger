@@ -64,7 +64,6 @@ ol{
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
-  margin-bottom: 10%;
 }
 
 #post-div {
@@ -145,3 +144,30 @@ element.style {
 .uk-modal-body {
   padding-bottom: 30px;
 }
+.form-submit-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 50px; 
+  width: 100px;
+  font: bold 15px arial, sans-serif;
+  
+  }
+
+
+  .uk-position-bottom {
+    position: absolute;
+    bottom: auto;
+  }
+
+  .edit-link {
+    margin-left: 42%;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(217, 224, 30, 0.711);
+    color: rgb(0, 0, 0);
+  }
+
+  
