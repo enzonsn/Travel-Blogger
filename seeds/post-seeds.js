@@ -23,6 +23,7 @@ const postData = [
         post_destination: "Norway",
         post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint4.",
         post_url: "/mockimages/Norway.png",
+<<<<<<< HEAD
         user_id: 1
     },
     {
@@ -38,17 +39,37 @@ const postData = [
         user_id: 1
     },
     {
+=======
+        user_id: 1
+    },
+    {
+        post_destination: "Santa Cruz, CA",
+        post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint5.",
+        post_url: "/mockimages/SantaCruz.png",
+        user_id: 2
+    },
+    {
+        post_destination: "Cancun, Mexico",
+        post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint6.",
+        post_url: "/mockimages/Mexico.png",
+        user_id: 1
+    },
+    {
+>>>>>>> dev
         post_destination: "Italy",
         post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint7.",
         post_url: "/mockimages/Italy.png",
         user_id: 2
     },
+<<<<<<< HEAD
     {
         post_destination: "Dublin, Ireland",
         post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint7",
         post_url: "/mockimages/Dublin.png",
         user_id: 3
     }
+=======
+>>>>>>> dev
 ]
 
 const seedPosts = () => Post.bulkCreate(postData);
