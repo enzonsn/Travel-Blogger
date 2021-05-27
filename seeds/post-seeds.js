@@ -43,6 +43,12 @@ const postData = [
         post_url: "/mockimages/Italy.png",
         user_id: 2
     },
+    {
+        post_destination: "Dublin, Ireland",
+        post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint7",
+        post_url: "/mockimages/Dublin.png",
+        user_id: 3
+    }
 ]
 
 const seedPosts = () => Post.bulkCreate(postData);
