@@ -5,7 +5,7 @@ const sequelize = require('../config/connection');
 const passport = require("passport");
 /* const withAuth = require('../utils/auth'); */
 
-//get all posts
+//get all posts for the profile page
 router.get('/', (req, res) => {
     Post.findAll({
       where: {
@@ -28,9 +28,9 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbPostData => {
-        console.log("this is the dbPostdData:", dbPostData);
+        // console.log("this is the dbPostdData:", dbPostData);
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        console.log("this is the post data:", posts);
+        // console.log("this is the post data:", posts);
         res.render('profile-page', { posts, loggedIn: true });
       })
       .catch(err => {
