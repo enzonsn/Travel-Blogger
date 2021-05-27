@@ -24,7 +24,7 @@ router.get("/",  (req, res) => {
     ],
   })
     .then((dbPostData) => {
-    console.log("post data ---------", dbPostData);
+    // console.log("post data ---------", dbPostData);
     res.json(dbPostData);
   })
     .catch((err) => {
@@ -61,9 +61,8 @@ router.get("/:id", (req, res) => {
 });
 
 // create a post!!!!!!!!!!*************
-router.post("/", checkNotAuthenticated, (req, res) => {
-  console.log('hello world' + req);
-  
+router.post("/",(req, res) => {
+  // console.log(req);
   Post.create({
     post_destination: req.body.post_destination,
     post_content: req.body.post_content,
@@ -111,6 +110,7 @@ router.put("/:id", (req, res) => {
 
 // delete a post
 router.delete("/:id", (req, res) => {
+  console.log("inside delete post route!!!!!!!!!");
     Post.destroy({
         where: {
           id: req.params.id,
