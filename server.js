@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: "supersecret",
   resave: false,
   saveUninitialized: false,
   cookie:{

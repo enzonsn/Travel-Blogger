@@ -60,9 +60,9 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// create a post!!!!!!!!!!*************
+// create a post!!!!!!!!!!NOT BEING USED???
 router.post("/",(req, res) => {
-  // console.log(req);
+  console.log("create route hit");
   Post.create({
     post_destination: req.body.post_destination,
     post_content: req.body.post_content,
@@ -88,6 +88,7 @@ router.put("/:id", (req, res) => {
   Post.update(
     {
       post_content: req.body.post_content,
+      post_url: req.body.post_url,
     },
     {
       where: {

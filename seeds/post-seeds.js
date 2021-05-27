@@ -38,6 +38,7 @@ const postData = [
         user_id: 1
     },
     {
+
         post_destination: "Italy",
         post_content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, incidunt fugiat. Ipsum deleniti, eligendi officiis quis ea est quae, distinctio repudiandae iure libero harum facere culpa aliquam saepe cum. Sint7.",
         post_url: "/mockimages/Italy.png",
