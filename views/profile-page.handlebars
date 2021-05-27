@@ -1,19 +1,42 @@
-    <div class="profile-head">
-        <h1 class="title">My Posts</h1>
-    </div>
-    {{#if posts.length}}
-    {{#each posts as |post|}}
-        {{> post-info post}}
-        
+<div class="profile-head">
+    <h1 class="title">My Posts</h1>
+</div>
 
-            {{!-- <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">Edit Post</button></a> --}}
+    <div id="my-id" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title"></h2>
+            <form class="new-post-form">
+                <fieldset class="uk-fieldset">
 
-            {{!-- <a href="/profile-page/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">Edit Post</button></a> --}}
+                <legend class="uk-legend">Add New Post</legend>
+
+                <div class="uk-margin">
+                    <input name="post-destination" class="uk-input" type="text" placeholder="Where Did You Travel?">
+                </div>
+                <div class="uk-margin">
+                    <textarea name="post-content" id="newblog-input" class="uk-input" type="text" placeholder="Insert Blog Here!"></textarea>
+                </div>
+                <div class="uk-margin">
+                    <input name="photo-link-input" class="uk-input" type="text" placeholder="Please Include Your Photo URL Here.">
+                </div>
+                </fieldset>
+                <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-submit-btn">SUBMIT</button>
+                <button class="uk-modal-close uk-button uk-button-default" type="button">CLOSE</button>
+            </form>
         </div>
+    </div>
+    <script src="/javascript/newPostForm.js"></script>
 
-    {{/each}}
+
+    {{#if posts.length}}
+        {{#each posts as |post|}}
+            {{> post-info post}}
+            {{!-- add something like ==> {{#if (user.id === post.user_id)}} --}}
+            <a href="single-post/edit/{{id}}" class="edit-link uk-button uk-button-default">Edit post</a>
+        {{/each}}
 
 {{else}}
 <h6 class="pb-4 has-text-centered is-italic">No Posts</h6>
 
 {{/if}}
+

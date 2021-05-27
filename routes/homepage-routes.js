@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbPostData) => {
-      console.log("POSTS DATA --------------", dbPostData[0]);
+      // console.log("POSTS DATA --------------", dbPostData[0]);
       // pass a single post object into the homepage template
       // console.log("home-routes line 15", dbPostData);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
