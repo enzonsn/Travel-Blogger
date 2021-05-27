@@ -27,7 +27,7 @@ header {
 
 h1 {
   padding-bottom: 2%;
-  color: cornsilk;
+  color: #f1f2f1;
   margin: 2%;
   margin-top: 0%;
 }
@@ -52,25 +52,25 @@ li {
 }
 
 .post-list {
-    margin-right: auto;
-    margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 ol{
-    padding: 0%
+  padding: 0%
 }
 
 .uk-width-1-2 {
-    /* width: calc(100% * 2 / 3.001); */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
+  /* width: calc(100% * 2 / 3.001); */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 #post-div {
-    background-color: rgb(90 216 228 / 87%);
-    box-shadow: 0 5px 15px rgb(0 0 0 / 61%);
-    /* max-width: ; */
+  background-color: rgb(90 216 228 / 87%);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 61%);
+  /* max-width: ; */
 }
 
 .post-creator {
@@ -93,7 +93,9 @@ ol{
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  border-bottom: 2px solid;
 }
 
+#newblog-input {
+  height: 250px;
+}
 

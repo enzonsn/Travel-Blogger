@@ -16,6 +16,9 @@
           {{/if}}
         <p class="blog-text">{{post_content}}</p>
       </div>
+      {{!-- add {{#if (user.id === post.user_id)}} --}}
+        <a id="single-post-link" href="./single-post" >EDIT/DELETE</a>
+        {{!-- <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-delete-btn">DELETE</button> --}}
     </div>
   </div>
 </article>

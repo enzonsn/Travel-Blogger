@@ -1,6 +1,34 @@
     <div class="profile-head">
         <h1 class="title">My Posts</h1>
     </div>
+
+    <div id="my-id" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title"></h2>
+            <form class="new-post-form">
+                <fieldset class="uk-fieldset">
+
+                <legend class="uk-legend">Add New Post</legend>
+
+                <div class="uk-margin">
+                    <input name="post-destination" class="uk-input" type="text" placeholder="Where Did You Travel?">
+                </div>
+                <div class="uk-margin">
+                    <textarea name="post-content" id="newblog-input" class="uk-input" type="text" placeholder="Insert Blog Here!"></textarea>
+                </div>
+                <div class="uk-margin">
+                    <input name="photo-link-input" class="uk-input" type="text" placeholder="Please Include Your Photo URL Here.">
+                </div>
+                </fieldset>
+                <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-submit-btn">SUBMIT</button>
+                <button class="uk-modal-close uk-button uk-button-default" type="button">CLOSE</button>
+            </form>
+            {{!-- <button class="uk-modal-close uk-button uk-button-default" type="button">CLOSE</button>
+            <button class="uk-button uk-button-default uk-margin-large-left" type="submit">SUBMIT</button> --}}
+        </div>
+    </div>
+    <script src="./javascript/newPostForm.js"></script>
+
     {{#if posts.length}}
     {{#each posts as |post|}}
         {{> post-info post}}
@@ -17,3 +45,4 @@
 <h6 class="pb-4 has-text-centered is-italic">No Posts</h6>
 
 {{/if}}
+
