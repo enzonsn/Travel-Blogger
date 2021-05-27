@@ -58,7 +58,7 @@ router.post('/register',  (req, res) => {
     bio: req.body.bio
 
   }).then(dbUser =>{
-    res.redirect('/home')
+    res.redirect('/')
     console.log(dbUser) 
   }).catch(err => {
     console.log(err);
