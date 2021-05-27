@@ -5,7 +5,15 @@ require('../passport-config')(passport)
 
 router.use(passport.session());
 router.use(passport.initialize());
+router.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+router.get('/test', (req, res)=>{
 
+  console.log(req.user.id)
+  res.json(req.user.id)
+})
 router.get('/',  (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
@@ -13,25 +21,26 @@ router.get('/',  (req, res) => {
   })
 })
 
-router.get('/:id', (req, res) => {
-  User.findOne({
-    attributes: { exclude: ['password'] },
-    where: {
-      id: req.params.id
-    }
+// router.get('/:id', (req, res) => {
+//   User.findOne({
+//     attributes: { exclude: ['password'] },
+//     where: {
+//       id: req.params.id
+//     }
 
-  }).then(dbUser => {
-    res.json(dbUser)
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
-});
+//   }).then(dbUser => {
+//     res.json(dbUser)
+//   }).catch(err => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   })
+// });
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   successRedirect: '/home',
   failureRedirect: '/',
   failureFlash: true
+  
 }));
 
 router.get('/logout', (req, res) => {
@@ -49,7 +58,8 @@ router.post('/register',  (req, res) => {
     bio: req.body.bio
 
   }).then(dbUser =>{
-    return dbUser
+    res.redirect('/home')
+    console.log(dbUser) 
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -107,6 +117,7 @@ function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
   return res.redirect('/')
   }
+  res.locals.user = req.user
   next()
 }
 

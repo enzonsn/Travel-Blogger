@@ -4,7 +4,10 @@ const { User, Post } = require("../models");
 const sequelize = require("../config/connection");
 const passport = require("passport");
 // const withAuth = require('');
-
+router.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 // !!!!!!!!!!!!! WE NEED TO ADD USER-AUTH IN THESE ROUTES !!!!!!!!!!!!!
 
 // get all posts
@@ -64,7 +67,14 @@ router.post("/",(req, res) => {
     post_destination: req.body.post_destination,
     post_content: req.body.post_content,
     post_url: req.body.post_url,
-    user_id: req.session.user_id,
+    user_id: req.user.id,
+   
+    include: [{
+      model: User,
+      attributes: ['username']
+    }] 
+      
+    
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -118,5 +128,13 @@ router.delete("/:id", (req, res) => {
           res.status(500).json(err);
         });
 })
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+  return res.redirect('/')
+  }
+  res.locals.user = req.session.user
+  next()
+}
 
 module.exports = router;

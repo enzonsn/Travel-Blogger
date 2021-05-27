@@ -19,13 +19,11 @@ module.exports = function(passport){
       ));
       
       passport.serializeUser(function (user, done) {
-        console.log('serialized')
         done(null, user.id);
       });
       
       passport.deserializeUser(function (id, done) {
         User.findByPk(id).then((user) => {
-          console.log('deserializing user:', user);
          return done(null, user);
         }).catch(function(err) {
           if (err) {
