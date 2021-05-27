@@ -30,7 +30,7 @@
             {{#if loggedIn}}
               <li class=""><a href="../home">Logout</a></li>
               <li>
-                  <a href="/profile-page/create/" uk-toggle="target: #post-modal" id="create-post">New Post</a>
+                  <a href="/profile-page" uk-toggle="target: #post-modal" id="create-post">New Post</a>
               </li>
             {{else}}
               <li class=""><a href="../profile">Account</a></li>
@@ -43,7 +43,17 @@
     </header>
     <main>
       {{{ body }}}
-      <div id="post-modal" uk-modal>
+    </main>
+    <footer class="uk-text-center uk-position-bottom" style="background-color: #f1f2f1; min-height: 80px;">
+      <p class="uk-flex-middle">Travel Blogger© All Right Reserved</p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
+</body>
+
+</html>
+
+{{!-- <div id="post-modal" uk-modal>
     <div class="uk-modal-dialog uk-margin-auto-vertical">
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-header">
@@ -71,14 +81,6 @@
             <button class="uk-button uk-button-default uk-modal-close" type="submit">POST</button>
         </div>
     </div>
-</div>
-      <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
-    </main>
-    <footer class="uk-text-center uk-position-bottom" style="background-color: #f1f2f1; min-height: 80px;">
-      <p class="uk-flex-middle">Travel Blogger© All Right Reserved</p>
-    </footer>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
-</body>
-
-</html>
+</div> --}}
+{{!--  
+      <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script> --}}
