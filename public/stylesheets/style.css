@@ -96,4 +96,25 @@ ol{
   border-bottom: 2px solid;
 }
 
+.uk-text-meta {
+  color: #222;
+}
 
+element.style {
+  bottom: 0px;
+  position: static;
+  background-color: #f1f2f1;
+  min-height: 80px;
+  width: 50%;
+}
+
+.form-submit-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 50px; 
+  width: 100px;
+  font: bold 15px arial, sans-serif;
+  
+  }
