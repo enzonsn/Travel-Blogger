@@ -112,7 +112,6 @@ element.style {
   width: 50%;
 }
 
-
 .uk-position-bottom {
   bottom: 0;
   left: 0;
@@ -142,6 +141,9 @@ element.style {
   padding-bottom: 30px;
 }
 
+.uk-modal-body {
+  padding-bottom: 30px;
+}
 .form-submit-button {
   background: #0066A2;
   color: white;
@@ -153,11 +155,17 @@ element.style {
   
   }
 
+.uk-navbar-nav {
+    display: contents;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
-  .uk-position-bottom {
+  /* .uk-position-bottom {
     position: absolute;
     bottom: auto;
-  }
+  } */
 
   .edit-link {
     margin-left: 42%;
@@ -168,6 +176,4 @@ element.style {
     color: rgb(0, 0, 0);
   }
 
-  footer {
-    margin-top: 150px;
-  }
+  
