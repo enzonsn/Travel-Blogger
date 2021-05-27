@@ -4,7 +4,7 @@ const { Post, User} = require("../models");
 // const withAuth = require("../utils/auth");
 
 
-
+// GETS THE SINGLE POST, BUT DOES NOT EDIT OR DELETE
 router.get("/edit/:id", (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
