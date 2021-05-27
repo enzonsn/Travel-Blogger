@@ -112,11 +112,7 @@ element.style {
   width: 50%;
 }
 
-.uk-position-bottom {
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+
 
 .uk-margin {
   margin-bottom: 0px;
@@ -162,11 +158,16 @@ element.style {
     list-style: none;
 }
 
-  /* .uk-position-bottom {
+  .uk-position-bottom {
     position: absolute;
     bottom: auto;
-  } */
+  }
 
+  /* .uk-position-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  } */
   .edit-link {
     margin-left: 42%;
     margin-right: auto;
