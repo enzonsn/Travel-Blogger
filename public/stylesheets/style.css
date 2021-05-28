@@ -162,10 +162,10 @@ element.style {
     list-style: none;
 }
 
-  /* .uk-position-bottom {
+  .uk-position-bottom {
     position: absolute;
     bottom: auto;
-  } */
+  }
 
   .edit-link {
     margin-left: 42%;
