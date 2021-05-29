@@ -168,7 +168,8 @@ element.style {
   }
 
   .edit-link {
-    margin-left: 42%;
+    width: 50%;
+    margin-left: 25%;
     margin-right: auto;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -176,4 +177,34 @@ element.style {
     color: rgb(0, 0, 0);
   }
 
+  .edit-link:hover {
+    background-color: rgb(232, 239, 13);
+  }
   
+  #edit-delete-post {
+    margin-left: 10%;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: auto;
+    background-color: rgba(217, 224, 30, 0.711)
+  }
+
+  .spacer {
+    height: 20%;
+    margin: 15%;
+  }
+  #edit-delete-post:hover {
+    background-color: rgb(232, 239, 13);
+  }
+
+  #edit-post-submit-btn:hover {
+    background-color: #47e736ed;
+  }
+  
+  #edit-post-delete-btn {
+    background-color: #e530309f;
+  }
+  
+  #edit-post-delete-btn:hover {
+    background-color:#e53030;
+  }
