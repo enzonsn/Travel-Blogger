@@ -12,11 +12,11 @@ html {
 }
 
 html {
-    background: url("../traveler.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url("../traveler.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
@@ -26,9 +26,16 @@ header {
 }
 
 h1 {
-  padding-bottom: 2%;
+  /* padding-bottom: 2%;
   color: #f1f2f1;
   margin: 2%;
+  margin-top: 0%; */
+
+  /* OR  */
+
+  padding: 2%;
+  color: #f1f2f1;
+  margin: 0;
   margin-top: 0%;
 }
 
@@ -42,7 +49,6 @@ a {
 a:hover {
   color: #1642e3e8;
   text-decoration: none;
-
 }
 
 li {
@@ -55,8 +61,9 @@ li {
   margin-right: auto;
   margin-left: auto;
 }
-ol{
-  padding: 0%
+
+ol {
+  padding: 0%;
 }
 
 .uk-width-1-2 {
@@ -67,13 +74,15 @@ ol{
 }
 
 #post-div {
-  background-color: rgb(90 216 228 / 87%);
+  /* background-color: rgb(90 216 228 / 87%); */
+  background-color: #b6c1b6eb;
   box-shadow: 0 5px 15px rgb(0 0 0 / 61%);
   /* max-width: ; */
+  border-radius: 5px;
 }
 
 .post-creator {
-  margin:auto;
+  margin: auto;
 }
 
 #create-post {
@@ -89,16 +98,23 @@ ol{
 }
 
 .title {
+  /* display: flex;
+  justify-content: center;
+  margin-top: 5%; */
+
+  /* OR  */
+
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  background-color: #b6c1b6eb;
+  color: black;
+  font-weight: 100;
+  width: 100%;
 }
-
 
 #newblog-input {
   height: 250px;
 }
-
 
 .uk-text-meta {
   color: #222;
@@ -147,74 +163,81 @@ element.style {
 }
 
 .uk-modal-body {
-  background-color: rgb(0 221 249 / 77%);;
+  /* background-color: rgb(0 221 249 / 77%); */
+  background-color: #b6c1b6eb;
   padding-bottom: 30px;
 }
 .form-submit-button {
-  background: #0066A2;
+  background: #0066a2;
   color: white;
   border-style: outset;
-  border-color: #0066A2;
-  height: 50px; 
+  border-color: #0066a2;
+  height: 50px;
   width: 100px;
   font: bold 15px arial, sans-serif;
-  
-  }
-
-.uk-navbar-nav {
-    display: contents;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
-  .uk-position-bottom {
-    position: absolute;
-    bottom: auto;
-  }
+.uk-navbar-nav {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  .edit-link {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    background-color: rgba(217, 224, 30, 0.711);
-    color: rgb(0, 0, 0);
-  }
+.uk-position-bottom {
+  position: absolute;
+  bottom: auto;
+}
 
-  .edit-link:hover {
-    background-color: rgb(232, 239, 13);
-  }
-  
-  #edit-delete-post {
-    margin-left: 10%;
-    margin-right: auto;
-    margin-bottom: 10%;
-    width: auto;
-    background-color: rgba(217, 224, 30, 0.711)
-  }
+.edit-link {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: rgba(217, 224, 30, 0.711);
+  color: rgb(0, 0, 0);
+}
 
-  .spacer {
-    height: 20%;
-    margin: 15%;
-  }
-  #edit-delete-post:hover {
-    background-color: rgb(232, 239, 13);
-  }
+.edit-link:hover {
+  background-color: rgb(232, 239, 13);
+}
 
-  #edit-post-submit-btn:hover {
-    background-color: #47e736ed;
-  }
-  
-  #edit-post-delete-btn {
-    background-color: #e530309f;
-  }
-  
-  #edit-post-delete-btn:hover {
-    background-color:#e53030;
-  }
+#edit-delete-post {
+  margin-left: 10%;
+  margin-right: auto;
+  margin-bottom: 10%;
+  width: auto;
+  background-color: rgba(217, 224, 30, 0.711);
+}
 
-  /* .uk-input {
+.spacer {
+  height: 20%;
+  margin: 15%;
+}
+#edit-delete-post:hover {
+  background-color: rgb(232, 239, 13);
+}
+
+#edit-post-submit-btn:hover {
+  background-color: #47e736ed;
+}
+
+#edit-post-delete-btn {
+  background-color: #e530309f;
+}
+
+#edit-post-delete-btn:hover {
+  background-color: #e53030;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.about-spacer {
+  height: 500px;
+}
+/* .uk-input {
     margin-bottom: 2%;
   } */
