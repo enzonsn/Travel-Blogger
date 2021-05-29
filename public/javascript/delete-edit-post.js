@@ -3,7 +3,7 @@ async function deleteFormHandler(event) {
   event.preventDefault();
 
   const id = document.querySelector("input[name='post-id-input'").value;
-  console.log("here is the id ------------------->>>>", id);
+  // console.log("here is the id ------------------->>>>", id);
   const response = await fetch(`/posts/${id}`, {
     method: "DELETE",
   });
@@ -22,7 +22,7 @@ async function editFormHandler(event) {
   const post_content = document.querySelector("#newblog-input").value;
   const post_url = document.querySelector('#photo-link-input').value;
   const id = document.querySelector("input[name='post-id-input'").value;
-  console.log("here is the id ------------------->>>>", id);
+  // console.log("here is the id ------------------->>>>", id);
   const response = await fetch(`/posts/${id}`, {
     method: "PUT",
     body: JSON.stringify({

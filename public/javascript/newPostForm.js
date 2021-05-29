@@ -1,4 +1,3 @@
-// const passport = require("passport");
 
 async function newPostHandler(event) {
     event.preventDefault();

@@ -103,12 +103,6 @@ router.put("/:id", (req, res) => {
     });
 });
 
-
-
-
-
-
-
 // delete a post
 router.delete("/:id", (req, res) => {
   console.log("inside delete post route!!!!!!!!!");

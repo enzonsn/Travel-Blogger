@@ -123,11 +123,16 @@ element.style {
 }
 
 .uk-button {
-  margin: 0px 0px 0px;
+  margin-top: 2%;
+  /* margin: 0px 0px 0px; */
 }
 
 .uk-button-default {
   background-color: #95c78f6b;
+}
+
+.uk-button-default:hover {
+  background-color: #79f16bef;
 }
 
 element.style {
@@ -142,6 +147,7 @@ element.style {
 }
 
 .uk-modal-body {
+  background-color: rgb(0 221 249 / 77%);;
   padding-bottom: 30px;
 }
 .form-submit-button {
@@ -208,3 +214,7 @@ element.style {
   #edit-post-delete-btn:hover {
     background-color:#e53030;
   }
+
+  /* .uk-input {
+    margin-bottom: 2%;
+  } */
