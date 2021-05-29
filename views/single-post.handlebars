@@ -1,4 +1,28 @@
-<div id="my-id" uk-modal>
+<article class="post" id={{post.id}}>
+  <div class="uk-width-1-2">
+    <div class="uk-card uk-card-default" id="post-div">
+      <div class="uk-card-media-top post-image">
+        <img src="{{post.post_url}}" alt="post image" />
+      </div>
+      <div class="uk-card-body">
+        <h2 class="post-destination">{{post.post_destination}}</h2>
+        <p class="post-creator">by {{post.user.username}}
+          on{{format_date post.created_at}}</p>
+          {{#if post.user.bio}}
+            <div class="uk-visible-toggle" tabindex="0">
+              <a>User Bio</a>
+            <div class="uk-hidden-hover">{{post.user.bio}}</div>
+            </div>
+          {{/if}}
+        <p class="blog-text">{{post.post_content}}</p>
+      </div>
+      {{!-- add {{#if (user.id === post.user_id)}} --}}
+        <button class="uk-button uk-button-default" uk-toggle="target: #edit-delete-modal" type="button" id="edit-delete-post">EDIT/DELETE</button>
+    </div>
+  </div>
+
+  {{!-- EDIT MODAL --}}
+  <div id="edit-delete-modal" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title"></h2>
             <form class="edit-post-form">
@@ -7,22 +31,22 @@
                 <legend class="uk-legend">EDIT</legend>
 
                 <div class="uk-margin">
-                    <h1>{{post_destination}}</h1>
+                    <h1>{{post.post_destination}}</h1>
                 </div>
                 <div class="uk-margin">
-                    <textarea name="post-content" id="newblog-input" class="uk-input" type="text" placeholder="Insert Blog Here!" value={{post_content}}></textarea>
+                    <textarea name="post-content" id="newblog-input" class="uk-input" type="text">{{post.post_content}}</textarea>
                 </div>
                 <div class="uk-margin">
-                    <input name="photo-link-input" class="uk-input" type="text" placeholder="Please Include Your Photo URL Here." value={{post_url}}>
+                    <input name="photo-link-input" id="photo-link-input" class="uk-input" type="text" value={{post.post_url}}>
                 </div>
-                <input class="post-id-input" value="{{user_id}}">
+                <input name='post-id-input' class ="uk-hidden" value="{{post.id}}">
                 </fieldset>
                 <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="edit-post-submit-btn">SUBMIT</button>
-                <button class="uk-button uk-button-default" type="button" id="post-delete-btn">DELETE</button>
+                <button class="uk-button uk-button-default delete-post-btn" type="button">DELETE</button>
             </form>
-            {{!-- <button class="uk-modal-close uk-button uk-button-default" type="button">CLOSE</button>
-            <button class="uk-button uk-button-default uk-margin-large-left" type="submit">SUBMIT</button> --}}
         </div>
-        <script src="./javascript/delete-post.js"></script>
         {{!-- <script src="./javascript/edit-post.js"></script> --}}
     </div>
+   <script src="/javascript/delete-edit-post.js"></script>
+</article>
+

@@ -159,7 +159,7 @@ element.style {
 }
 
   .uk-position-bottom {
-    position: absolute;
+    /* position: absolute; */
     bottom: auto;
   }
 
@@ -168,6 +168,7 @@ element.style {
     left: 0;
     right: 0;
   } */
+
   .edit-link {
     margin-left: 42%;
     margin-right: auto;
@@ -177,4 +178,10 @@ element.style {
     color: rgb(0, 0, 0);
   }
 
-  
+  footer {
+    margin-top: 10px;
+  }
+
+  .uk-height-1-1 {
+    height:50%;
+  }
