@@ -258,11 +258,10 @@ img {
   width: 350%;
 }
 
-#register-submit {
-  opacity: 0;
-}
+/* #register-submit {
+  opacity: 100%;
+} */
 
 #register-button-modal {
-  padding: 0 0px 0 50px;
   margin-top: -200px;
-}
+} 
