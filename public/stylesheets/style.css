@@ -244,3 +244,25 @@ img {
   .uk-height-1-1 {
     height:50%;
   }
+
+#location {
+  margin-top:20px;
+}
+
+#register-background {
+  background-color: #c1dfc100;
+}
+
+#bio-box {
+  max-width: 1000%;
+  width: 350%;
+}
+
+#register-submit {
+  opacity: 0;
+}
+
+#register-button-modal {
+  padding: 0 0px 0 50px;
+  margin-top: -200px;
+}
