@@ -67,11 +67,11 @@ router.post("/",(req, res) => {
     post_destination: req.body.post_destination,
     post_content: req.body.post_content,
     post_url: req.body.post_url,
-    user_id: req.user.id,
+    user_id: req.body.user_id,
    
     include: [{
       model: User,
-      attributes: ['username']
+      attributes: ['username', 'id']
     }] 
       
     
@@ -102,12 +102,6 @@ router.put("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
-
-
-
-
 
 // delete a post
 router.delete("/:id", (req, res) => {

@@ -30,25 +30,23 @@
     </div>
 
     <div id="register-modal" uk-modal>
-        <div class="uk-modal-dialog uk-margin-auto-vertical">
+        <div class="uk-modal-dialog uk-margin-auto-vertical uk-border-rounded uk-container uk-border-rounded" style="z-index: 980; background-color: #c1dfc1c7; color: black; max-width: none">
             <button class="uk-modal-close-default" type="button" uk-close></button>
-            <div class="uk-modal-header">
-                <h2 class="uk-modal-title uk-text-center">REGISTER</h2>
-            </div>
-            <div class="uk-modal-body uk-overflow-auto uk-height-medium">
+                <h2 class="uk-margin-medium-top uk-text-center uk-margin-remove-bottom">Register</h2>
+            <div class="uk-modal-body uk-overflow-auto uk-height-medium" id="register-background">
                 <form action="/users/register" method="POST">
                     <fieldset class="uk-fieldset">
-                        <div class="uk-grid-column" uk-grid >
+                        <div class="uk-grid-column uk-grid" >
                           <div class="uk-width-1-2@s uk-height-small uk-text-center uk-margin">
                             <input class="uk-input uk-form-width-medium uk-margin-top" type="text" placeholder="Username" name="username" required>
                             <input class="uk-input uk-form-width-medium uk-margin" type="password" placeholder="Password" name="password" required>
                             {{!-- <input class="uk-input uk-form-width-medium uk-margin-bottom" type="password" placeholder="Confirm Password"> --}}
-                            <input class="uk-input uk-form-width-medium uk-margin-auto" type="text" placeholder="Location" name="location" required>
+                            <input class="uk-input uk-form-width-medium uk-margin-auto" type="text" placeholder="Location" {{!-- id="location" --}} name="location" required>
                             <div class="uk-width-1-2@s uk-margin-top uk-text-center uk-height-medium">
-                            <textarea class="uk-textarea uk-height-1-1" style="resize: none;" cols="25" placeholder="Bio" name="bio" required></textarea>
+                            <textarea class="uk-textarea uk-height-1-1" {{!-- id="bio-box" --}} style="resize: none;" cols="25" placeholder="Bio" name="bio" required></textarea>
                           </div>
-                          <div class="uk-modal-footer uk-text-center">
-                              <input type="submit">
+                          <div class="uk-button uk-button-default" {{!-- id="register-button-modal"> --}}<a href="#" style="color: black"></a>
+                              <input type="submit" {{!-- id="register-submit" --}}>
                 {{!-- <button class="uk-button uk-button-default uk-modal-close" type="submit">Submit</button> --}}
             </div>
                           

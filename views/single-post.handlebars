@@ -8,17 +8,20 @@
         <h2 class="post-destination">{{post.post_destination}}</h2>
         <p class="post-creator">by {{post.user.username}}
           on{{format_date post.created_at}}</p>
-          {{#if post.user.bio}}
+          {{!-- {{#if post.user.bio}}
             <div class="uk-visible-toggle" tabindex="0">
               <a>User Bio</a>
             <div class="uk-hidden-hover">{{post.user.bio}}</div>
             </div>
-          {{/if}}
+          {{/if}} --}}
         <p class="blog-text">{{post.post_content}}</p>
       </div>
       {{!-- add {{#if (user.id === post.user_id)}} --}}
         <button class="uk-button uk-button-default" uk-toggle="target: #edit-delete-modal" type="button" id="edit-delete-post">EDIT/DELETE</button>
     </div>
+  </div>
+  <div class="spacer">
+
   </div>
 
   {{!-- EDIT MODAL --}}
@@ -42,7 +45,7 @@
                 <input name='post-id-input' value="{{post.id}}">
                 </fieldset>
                 <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="edit-post-submit-btn">SUBMIT</button>
-                <button class="uk-button uk-button-default delete-post-btn" type="button">DELETE</button>
+                <button class="uk-button uk-button-default delete-post-btn" type="button" id="edit-post-delete-btn">DELETE</button>
             </form>
         </div>
         {{!-- <script src="./javascript/edit-post.js"></script> --}}

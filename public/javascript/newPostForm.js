@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 // const passport = require("passport");
+>>>>>>> registermodalcss
 
 async function newPostHandler(event) {
     event.preventDefault();
