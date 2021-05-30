@@ -128,11 +128,7 @@ element.style {
   width: 50%;
 }
 
-.uk-position-bottom {
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+
 
 .uk-margin {
   margin-bottom: 0px;
@@ -241,3 +237,10 @@ img {
 /* .uk-input {
     margin-bottom: 2%;
   } */
+  footer {
+    margin-top: 10px;
+  }
+
+  .uk-height-1-1 {
+    height:50%;
+  }

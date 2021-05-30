@@ -9,7 +9,7 @@ const passport = require("passport");
 router.get('/', (req, res) => {
     Post.findAll({
       where: { 
-        user_id: req.user.id,
+        user_id: 1,
       },
       attributes: [
         'id',
@@ -69,3 +69,40 @@ router.get('/create/', (req, res) => {
   
 
 module.exports = router;
+
+
+// router.get('/edit/:id', (req, res) => {
+//     Post.findOne({
+//       attributes: [
+//         'id',
+//         'post_content',
+//         'post_url',
+//       ],
+//       include: [
+//         {
+//             model: User,
+//             attributes: ['username']
+//           },
+//         {
+//           model: User,
+//           attributes: ['username']
+//         }
+//       ]
+//     })
+//       .then(dbPostData => {
+//         if (!dbPostData) {
+//           res.status(404).json({ message: 'No post found with this id' });
+//           return;
+//         }
+  
+//     const post = dbPostData.get({ plain: true });
+
+//     res.render('edit-post', {
+//             post,
+//             loggedIn: true
+//             });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });

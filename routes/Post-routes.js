@@ -67,7 +67,7 @@ router.post("/",(req, res) => {
     post_destination: req.body.post_destination,
     post_content: req.body.post_content,
     post_url: req.body.post_url,
-    user_id: req.user.id,
+    user_id: req.body.user_id,
    
     include: [{
       model: User,
