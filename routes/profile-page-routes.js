@@ -38,34 +38,34 @@ router.get('/', (req, res) => {
       });
   });
 
-router.get('/create/', (req, res) => {
-  console.log("---------------------##########-----------------")
-    Post.findAll({
-      attributes: [
-        'id',
-        'post_content',
-        'post_url'
-      ],
-      include: [
-        {
-            model: User,
-            attributes: ['username']
-          },
-        {
-          model: User,
-          attributes: ['username']
-        }
-      ]
-    })
-      .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('create-post', { posts, loggedIn: true });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+// router.get('/create/', (req, res) => {
+//   console.log("---------------------##########-----------------")
+//     Post.findAll({
+//       attributes: [
+//         'id',
+//         'post_content',
+//         'post_url'
+//       ],
+//       include: [
+//         {
+//             model: User,
+//             attributes: ['username']
+//           },
+//         {
+//           model: User,
+//           attributes: ['username']
+//         }
+//       ]
+//     })
+//       .then(dbPostData => {
+//         const posts = dbPostData.map(post => post.get({ plain: true }));
+//         res.render('create-post', { posts, loggedIn: true });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+//   });
   
 
 module.exports = router;
