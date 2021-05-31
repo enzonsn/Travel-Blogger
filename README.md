@@ -5,7 +5,7 @@
   
   The web application uses Node.js and Express.js to create a RESTful API, Handlebars.js as a templating engine, MySQL and Sequelize ORM for the database, uses GET and POST routes for storing and retrieving data, dotenv and bcrypt for securing sensitive data, passport for user authentication, and UIkit for front-end frameworking.
  
- Note: User cannot upload photos at this time. This feature will be added in future deployments.
+ Note: Users cannot upload photos at this time. This feature will be added in future deployments.
  
  ![Screenshot](./assets/images/screenshot.png)
   ## Table of Contents
