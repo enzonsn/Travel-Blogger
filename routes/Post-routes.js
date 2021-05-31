@@ -67,7 +67,7 @@ router.post("/",(req, res) => {
     post_destination: req.body.post_destination,
     post_content: req.body.post_content,
     post_url: req.body.post_url,
-    user_id: req.body.user_id,
+    user_id: req.user.id,
    
     include: [{
       model: User,
@@ -76,7 +76,7 @@ router.post("/",(req, res) => {
       
     
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then(res.redirect('/profile'))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

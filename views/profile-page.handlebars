@@ -5,19 +5,19 @@
     <div id="my-id" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title"></h2>
-            <form class="new-post-form">
+            <form class="new-post-form" action="/posts/" method="POST">
                 <fieldset class="uk-fieldset">
 
                 <legend class="uk-legend">Add New Post</legend>
 
                 <div class="uk-margin">
-                    <input name="post-destination" class="uk-input" type="text" placeholder="Where Did You Travel?">
+                    <input name="post_destination" class="uk-input" type="text" placeholder="Where Did You Travel?">
                 </div>
                 <div class="uk-margin">
-                    <textarea name="post-content" id="newblog-input" class="uk-input" type="text" placeholder="Insert Blog Here!"></textarea>
+                    <textarea name="post_content" id="newblog-input" class="uk-input" type="text" placeholder="Insert Blog Here!"></textarea>
                 </div>
                 <div class="uk-margin">
-                    <input name="photo-link-input" class="uk-input" type="text" placeholder="Please Include Your Photo URL Here.">
+                    <input name="post_url" class="uk-input" type="text" placeholder="Please Include Your Photo URL Here.">
                 </div>
                 </fieldset>
                 <button class="uk-button uk-button-default uk-margin-large-left" type="submit" id="post-submit-btn">SUBMIT</button>
