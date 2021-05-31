@@ -76,7 +76,7 @@ router.post("/",(req, res) => {
       
     
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then(res.redirect('/profile'))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
