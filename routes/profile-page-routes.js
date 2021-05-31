@@ -9,7 +9,7 @@ const passport = require("passport");
 router.get('/', (req, res) => {
     Post.findAll({
       where: { 
-        user_id: 1,
+        user_id: req.user.id,
       },
       attributes: [
         'id',
